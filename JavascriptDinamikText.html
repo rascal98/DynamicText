@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+
+
+    <script>
+
+
+
+            var idSayac=0;
+        $(document).ready(function () {
+            $("#tik").click(function(){
+        
+            $("<label>Keyword:</label><input type='text' id=deger"+idSayac+" value='Keywords"+idSayac+"'/><label>url:</label><input type='text' value='url"+idSayac+"' id='url"+idSayac+"'><br/>").appendTo("#content");
+            idSayac++;
+        });
+        var array=[];
+        $("#mehmet").click(function(){        
+        for(var i=0;i<idSayac;i++){
+        
+        var val= $("#deger"+i).val();
+        var url= $("#url"+i).val();
+        var myObject = new Object();
+        myObject.name=val;
+        myObject.age = url;
+        array.push(myObject);
+        }
+        alert(JSON.stringify(array));
+    
+        
+
+
+        });
+        });
+
+        
+        
+        
+        </script>
+</head>
+<body>
+    
+      
+
+    <div id="content">
+
+    </div>
+
+
+<button id="tik">Keyword Alanları Oluştur</button>
+<button id="mehmet">değerleri al</button>
+
+
+
+
+
+</body>
+</html>
